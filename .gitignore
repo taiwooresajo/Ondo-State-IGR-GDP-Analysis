@@ -1,0 +1,10 @@
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+
+.vscode/
+
+.DS_Store
+
+*.log
