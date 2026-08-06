@@ -1,31 +1,52 @@
-# Statistical Analysis of Internally Generated Revenue (IGR) and Economic Growth in Ondo State
+# Statistical Analysis of Internally Generated Revenue (IGR) and Economic Growth (GDP) in Ondo State
 
-## Overview
+## Project Overview
 
-This repository contains my undergraduate research project investigating the relationship between Internally Generated Revenue (IGR) and Gross Domestic Product (GDP) in Ondo State, Nigeria.
+This project investigates the relationship between Internally Generated Revenue (IGR) and Gross Domestic Product (GDP) in Ondo State, Nigeria, using statistical and time series techniques in R.
 
-The analysis was carried out using R and RStudio with both classical statistical techniques and time series models.
+The analysis examines revenue trends, economic growth, the relationship between IGR and GDP, and volatility behaviour using GARCH and EGARCH models.
 
-## Research Objectives
+---
 
-- Examine the trend of IGR.
-- Assess the trend of GDP.
+## Objectives
+
+- Examine the trend of Internally Generated Revenue (IGR).
+- Assess the trend of Gross Domestic Product (GDP).
 - Determine the relationship between IGR and GDP.
-- Estimate the effect of IGR on GDP.
+- Evaluate the effect of IGR on GDP using regression analysis.
 - Analyse volatility using GARCH and EGARCH models.
+- Forecast future values of IGR and GDP.
+
+---
+
+## Data
+
+The datasets contain monthly observations for:
+
+- Internally Generated Revenue (IGR)
+- Gross Domestic Product (GDP)
+
+Study Period:
+
+**2015–2024**
+
+---
 
 ## Statistical Methods
 
 - Descriptive Statistics
-- Time Series Visualization
-- Augmented Dickey-Fuller (ADF) Test
+- Trend Analysis
 - Pearson Correlation
 - Linear Regression
-- Diagnostic Tests
-- ARCH Test
+- Augmented Dickey-Fuller (ADF) Test
+- Breusch-Pagan Test
+- Durbin-Watson Test
+- Shapiro-Wilk Test
 - GARCH Model
 - EGARCH Model
 - Forecasting
+
+---
 
 ## Software
 
@@ -34,17 +55,37 @@ The analysis was carried out using R and RStudio with both classical statistical
 - Git
 - GitHub
 
+---
+
 ## Repository Structure
 
-data/ - datasets
+```
+data/
+├── raw/
+└── processed/
 
-scripts/ - R scripts
+scripts/
 
-output/ - tables, graphs and reports
+figures/
+
+outputs/
+
+docs/
+```
+
+---
+
+## Current Status
+
+- Repository structure completed
+- Data uploaded
+- Analysis in progress
+- Documentation being updated
+
+---
 
 ## Author
 
-Taiwo Oresajo
+**Taiwo Oresajo**
 
-
-This update was created on the **improve-readme** branch.
+Undergraduate Research Project
