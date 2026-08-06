@@ -46,15 +46,35 @@ Study Period:
 - EGARCH Model
 - Forecasting
 
----
+## Key Findings
 
-## Software
+- Internally Generated Revenue (IGR) exhibited an overall upward trend between 2015 and 2024.
+- Gross Domestic Product (GDP) also showed sustained growth during the study period.
+- Pearson correlation analysis revealed a very strong positive relationship between IGR and GDP (r = 0.982, p < 0.001).
+- Linear regression showed that IGR explained approximately 84.8% of the variation in GDP (R² = 0.848).
+- Both IGR and GDP became stationary after first differencing based on the Augmented Dickey-Fuller (ADF) test.
+- GARCH and EGARCH models were fitted to analyse and forecast volatility in the series.
+
+---
+## Software and Technologies
 
 - R
 - RStudio
 - Git
 - GitHub
+- tidyverse
+- ggplot2
+- forecast
+- rugarch
+- tseries
+- psych
+- lmtest
 
+---
+
+## License
+
+This project is released under the MIT License.
 ---
 
 ## Repository Structure
@@ -75,13 +95,13 @@ docs/
 
 ---
 
-## Current Status
+## Repository Contents
 
-- Repository structure completed
-- Data uploaded
-- Analysis in progress
-- Documentation being updated
-
+- `data/` – Raw and processed datasets.
+- `scripts/` – R scripts and R Markdown files used for the analysis.
+- `figures/` – Charts and visualizations.
+- `outputs/` – Reports and analysis outputs.
+- `docs/` – Supporting project documents.
 ---
 
 ## Author
