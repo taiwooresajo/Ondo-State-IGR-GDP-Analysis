@@ -14,11 +14,10 @@ rm(list = ls())
 library(readxl)
 library(dplyr)
 
-
 # Import datasets
-igr <- read_excel("data/raw/IGR DATASET.xlsx")
+igr <- read_excel("data/raw/igr_dataset.xlsx")
 
-gdp <- read_excel("data/raw/GDP DATASET.xlsx")
+gdp <- read_excel("data/raw/gdp_dataset.xlsx")
 
 # View first rows
 head(igr)

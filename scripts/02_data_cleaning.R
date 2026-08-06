@@ -13,8 +13,8 @@ library(dplyr)
 library(tidyr)
 
 # Import raw datasets
-igr <- read_excel("data/raw/IGR DATASET.xlsx")
-gdp <- read_excel("data/raw/GDP DATASET.xlsx")
+igr <- read_excel("data/raw/igr_dataset.xlsx")
+gdp <- read_excel("data/raw/gdp_dataset.xlsx")
 
 # Convert IGR data from wide to long format
 igr_long <- igr %>%
@@ -32,11 +32,20 @@ gdp_long <- gdp %>%
     values_to = "GDP"
   )
 
-# Remove ".0" if present in year names
-igr_long$Year <- gsub("\\.0", "", igr_long$Year)
-gdp_long$Year <- gsub("\\.0", "", gdp_long$Year)
+# Clean year names
+igr_long$Year <- substr(igr_long$Year, 1, 4)
+gdp_long$Year <- substr(gdp_long$Year, 1, 4)
+
+# Remove annual total rows
+igr_long <- igr_long %>%
+  filter(Month != "Total")
+
+gdp_long <- gdp_long %>%
+  filter(Month != "Total")
 
 # Merge datasets
+unique(igr_long$Year)
+unique(gdp_long$Year)
 data <- left_join(
   igr_long,
   gdp_long,
@@ -47,6 +56,29 @@ data <- left_join(
 data$IGR <- as.numeric(data$IGR)
 data$GDP <- as.numeric(data$GDP)
 
+# Arrange data chronologically
+data <- data %>%
+  arrange(Year, match(Month, month.name))
+
+# Convert to numeric
+data$IGR <- as.numeric(data$IGR)
+data$GDP <- as.numeric(data$GDP)
+# Arrange data chronologically
+
+month_order <- c(
+  "Jan", "Feb", "Mar", "Apr",
+  "May", "Jun", "Jul", "Aug",
+  "Sep", "Oct", "Nov", "Dec"
+)
+
+data$Month <- factor(
+  data$Month,
+  levels = month_order
+)
+
+data <- data %>%
+  arrange(as.numeric(Year), Month)
+  
 # Create first differences
 data$DIGR <- c(NA, diff(data$IGR))
 data$DGDP <- c(NA, diff(data$GDP))
