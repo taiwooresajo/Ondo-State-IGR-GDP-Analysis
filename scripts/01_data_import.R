@@ -14,9 +14,6 @@ rm(list = ls())
 library(readxl)
 library(dplyr)
 
-# Set working directory
-# (Update this path if your project is stored elsewhere)
-setwd(".")
 
 # Import datasets
 igr <- read_excel("data/raw/IGR DATASET.xlsx")
